@@ -63,6 +63,21 @@ do
   COMMAND2
 done
 
+# Accepting user input 
+syntax: read -p "PROMPT" variable_name
+
+read -p "Enter a user name : " USER
+
+# to access items on the command line use positional paarameters 
+
+name of the program represented by $0
+first parameter is represented by $1
+to access all the items on the command line starting at $1 use the special variable $@
+
+# # is uesed to comment in a script
+
+# Exit status
+
 
 
 
