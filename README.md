@@ -173,6 +173,9 @@ System Utilities:
     awk or sed: Text processing and pattern matching tools.
     find: Search for files in a directory hierarchy.
 
+| <pipe command sends the output of the first command as a input to second>
+
+
 
 
 
