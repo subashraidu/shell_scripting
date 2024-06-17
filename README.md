@@ -174,6 +174,35 @@ System Utilities:
     find: Search for files in a directory hierarchy.
 
 | <pipe command sends the output of the first command as a input to second>
+date <command gives you server date and time> date is a default shell command it sends the output to stdin, and pipecommand only recives the input from the output got from this command ,so as date is sending data to stdin.
+
+awk <prattern scanning and processing language>
+
+ps -ef | grep amazon | awk -F" " '{print $2}'
+
+set -e <exits the script when there is a error>
+set -o pipefail <pipefail>
+
+set -exo pipefail
+
+curl -x GET swiggy.com  <directly gets the information>
+
+wget <command will download and file the data>
+
+sudo find / -name pam.d  <it will find by the location you give>
+
+sudo su - <switch to root user>
+
+su  kiran <switch user to kiran>
+
+trap <command is used for trapping signals> (signal is passed to kill a specific file)  (ctrl c is used to stop execution of a script )
+
+kill -9 <process id> (instant kill the process with this process id)
+
+
+
+
+
 
 
 
