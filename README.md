@@ -199,6 +199,10 @@ trap <command is used for trapping signals> (signal is passed to kill a specific
 
 kill -9 <process id> (instant kill the process with this process id)
 
+netstat, short for network statistics, is a command-line tool used to display network connections, routing tables, interface statistics, masquerade connections, and multicast memberships. It is available on most Unix-like operating systems and Windows.
+
+
+
 
 
 
