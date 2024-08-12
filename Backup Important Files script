@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Backup Script
+
+# Define variables
+BACKUP_DIR="$HOME/backup"
+DATE=$(date +"%Y%m%d_%H%M%S")
+BACKUP_FILE="backup_$DATE.tar.gz"
+SOURCE_DIR="$HOME/Documents"
+
+# Create backup directory if it doesn't exist
+mkdir -p "$BACKUP_DIR"
+
+# Create a tar.gz archive of the source directory
+tar -czf "$BACKUP_DIR/$BACKUP_FILE" -C "$SOURCE_DIR" .
+
+# Print a message indicating the backup is complete
+echo "Backup of '$SOURCE_DIR' completed successfully."
+echo "Backup file created: $BACKUP_DIR/$BACKUP_FILE"
