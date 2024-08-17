@@ -1,0 +1,35 @@
+ Automates the deployment of applications. It might involve steps like pulling the latest code from a version control system, building the application, and deploying it to a target environment.
+
+#!/bin/bash
+echo "Starting deployment..."
+git pull origin main
+npm install
+npm run build
+scp -r ./build user@server:/var/www/html/
+echo "Deployment completed."
+
+
+
+Creates backups of important data such as databases or configuration files and stores them securely.
+
+#!/bin/bash
+TIMESTAMP=$(date +"%F")
+BACKUP_DIR="/backups/$TIMESTAMP"
+mkdir -p "$BACKUP_DIR"
+tar -czf "$BACKUP_DIR/db_backup.tar.gz" /path/to/database
+echo "Backup completed and saved to $BACKUP_DIR"
+
+
+Monitors system metrics and application health, and sends alerts if something goes
+
+#!/bin/bash
+CPU_USAGE=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1}')
+DISK_USAGE=$(df / | grep / | awk '{ print $5 }' | sed 's/%//g')
+
+if [ $(echo "$CPU_USAGE > 80" | bc) -eq 1 ]; then
+    echo "High CPU Usage: $CPU_USAGE%"
+fi
+
+if [ $DISK_USAGE -gt 90 ]; then
+    echo "High Disk Usage: $DISK_USAGE%"
+fi
