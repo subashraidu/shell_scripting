@@ -41,6 +41,54 @@ tar czf file.tar | wc -c:    The above command will display the size of archive 
 tar rvf file.tar *.c       : Update existing tar file in Linux  
 tar tvf file.tar | grep "text to find"  : This command will list only for the mentioned text or image in grep from archived file. 
 tar tvf file.tar filename               :This command views the archived files along with their details.  
-tar tvf file.tar --wildcards '*.png'    :To search for an image in .png format: 
+tar tvf file.tar --wildcards '*.png'    :To search for an image in .png format
+
+
+
+Zip Command to Compress Files in Linux
+
+`zip` command emerges as a powerful and user-friendly tool. Distinct from the `tar` command, `zip` specializes in creating compressed files while preserving the integrity of the original content. The straightforward syntax of the `zip` command simplifies the compression process:
+
+zip [options] zipfile files/directories
+
+    [options]: Optional flags or settings for the zip command.
+    zipfile: The name of the ZIP archive to be created.
+    files/directories: The files or directories to be included in the ZIP archive.
+
+gzip [options] filename
+
+[options]: Optional flags or settings you may want to apply.
+filename: The name of the file you wish to compres
+
+zip:
+
+    Creates a .zip archive, which can contain multiple files and directories.
+    Uses the DEFLATE compression algorithm by default, but can also use other algorithms.
+    Supports compression and archiving in a single step.
+    Includes metadata such as file permissions, timestamps, and directory structures.
+
+zip:
+
+    Command example: zip archive.zip file1 file2 dir/
+    To decompress: unzip archive.zip
+    zip creates an archive and compresses it in one step.
+
+gzip:
+
+    Compresses individual files and creates a .gz file.
+    Also uses the DEFLATE compression algorithm.
+    Only compresses files; it does not handle directories or multiple files directly.
+    Generally used in combination with other tools like tar to handle multiple files or directories (tar archives files, and gzip compresses the resulting archive).
+
+gzip:
+
+    Command example: gzip file.txt (produces file.txt.gz)
+    To decompress: gunzip file.txt.gz (restores file.txt)
+    gzip compresses single files, and is often used with tar to create compressed archives of multiple files (tar archives them, and gzip compresses the archive)
+
+
+In summary, zip is a comprehensive tool for creating and managing archives with compression, while gzip focuses solely on compressing individual files and is usually combined with tar for handling multiple files and directories.
+
+
 
 
