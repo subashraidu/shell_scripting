@@ -1,0 +1,46 @@
+ Compress Files in Linux
+
+tar Command to Compress Files in Linux
+
+The Linux ‘tar’ stands for tape archive, which is used to create Archive and extract the Archive files. tar command in Linux is one of the important commands that provides archiving functionality in Linux. We can use the Linux tar command to create compressed or uncompressed Archive files and also maintain and modify them. 
+
+Syntax of `tar` command in Linux
+tar [options] [archive-file] [file or directory to be archived]
+
+
+    tar: The command itself.
+    [options]: Optional flags or settings that modify the behavior of the tar command.
+    [archive-file]: The name of the archive file you are creating or working with.
+    [file or directory to be archived]: The file or directory you want to include in the archive.
+
+
+An Archive file is a file that is composed of one or more files along with metadata. Archive files are used to collect multiple data files together into a single file for easier portability and storage, or simply to compress files to use less storage space. 
+
+
+options
+-c: Creates an archive by bundling files and directories together.
+-x: Extracts files and directories from an existing archive.
+-f: Specifies the filename of the archive to be created or extracted.
+-t: Displays or lists the files and directories contained within an archive.
+-u: Archives and adds new files or directories to an existing archive.
+-v: Displays verbose information, providing detailed output during the archiving or extraction process.
+-A: Concatenates multiple archive files into a single archive.
+-z: Uses gzip compression when creating a tar file, resulting in a compressed archive with the ‘.tar.gz’ extension.
+-W: Verifies the integrity of an archive file, ensuring its contents are not corrupted.
+-r: Updates or adds files or directories to an already existing archive without recreating the entire archive.
+
+
+example:
+tar cvf file.tar *.c         : This command creates a tar file called file.tar which is the Archive of all .c files in the current directory. 
+tar xvf file.tar             : Extracting files from Archive using option -xvf 
+tar cvzf file.tar.gz *.c     : This command creates a tar file called file.tar.gz which is the Archive of .c files. 
+tar xvzf file.tar.gz         : This command extracts files from tar archived file.tar.gz files.  
+tar xvf file.tar "fileA" "fileB" : This command will extract or untar multiple files from the tar, tar.gz and tar.bz2 archive file. For example, the above command will extract “fileA” “fileB” from the archive files.  
+tar zxvf file1.tar.gz "fileA" "fileB" : This command will extract or untar multiple files from the tar, tar.gz and tar.bz2 archive file. For example, the above command will extract “fileA” “fileB” from the archive files.  
+tar czf file.tar | wc -c:    The above command will display the size of archive file in Kilobytes (KB). 
+tar rvf file.tar *.c       : Update existing tar file in Linux  
+tar tvf file.tar | grep "text to find"  : This command will list only for the mentioned text or image in grep from archived file. 
+tar tvf file.tar filename               :This command views the archived files along with their details.  
+tar tvf file.tar --wildcards '*.png'    :To search for an image in .png format: 
+
+
