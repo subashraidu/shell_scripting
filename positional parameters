@@ -1,0 +1,15 @@
+$# represents the number of positional parameters (arguments) passed to the script. This is useful for validating input and controlling script execution based on the number of arguments provided.
+
+#!/bin/bash
+
+echo "Number of arguments: $#"
+
+if [ $# -eq 0 ]; then
+  echo "No arguments provided."
+else
+  echo "Arguments provided: $@"
+fi
+
+$#: Gives the count of arguments passed to the script. If you run the script with ./example.sh arg1 arg2, $# will be 2.
+
+$@: Represents all the arguments passed to the script, preserving each argument as a separate entity. For example, arg1 and arg2 would be treated as separate arguments.
