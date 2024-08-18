@@ -71,3 +71,24 @@ echo "file renaming completed"
 
 
 
+##### creating random file
+
+#!/bin/bash
+
+read -p "enter number of files to be created: " count_random_file
+
+count=1
+while [ "$count" -le "$count_random_file" ];
+do
+	
+	filename="random_$(date +"%d%m%Y_%H%M%S")"
+	touch /home/yalla/shellscript/sample_files/"$filename"
+	count=$((count + 1))
+	sleep 5
+done
+
+echo "random file creation completed"
+
+
+
+
