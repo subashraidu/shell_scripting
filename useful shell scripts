@@ -30,6 +30,44 @@ if [ $(echo "$CPU_USAGE > 80" | bc) -eq 1 ]; then
     echo "High CPU Usage: $CPU_USAGE%"
 fi
 
+
+##Generate a Random File with Random Content
+
+#!/bin/bash
+
+# Define the file name and size (in bytes)
+FILENAME="randomfile.bin"
+SIZE=1024  # Size in bytes (e.g., 1024 bytes = 1 KB)
+
+# Generate a random file
+head -c $SIZE /dev/urandom > "$FILENAME"
+
+echo "Random file '$FILENAME' of size $SIZE bytes created."
+
+
 if [ $DISK_USAGE -gt 90 ]; then
     echo "High Disk Usage: $DISK_USAGE%"
 fi
+
+
+## date in shell script - date +"%d%m%Y_%H%M%S"
+
+
+## filerenaming script
+
+#!/bin/bash
+
+#############################
+#author  : creatig a file
+#version : V1
+############################
+
+
+filename="random_$(date +"%d%m%Y_%H%M%S")"
+
+mv /home/yalla/shellscript/sample_files/file1 /home/yalla/shellscript/sample_files/"$filename"
+
+echo "file renaming completed"
+
+
+
