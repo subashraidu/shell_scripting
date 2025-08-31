@@ -1,0 +1,68 @@
+# File and Directory Management
+pwd → Show current working directory
+ls -l → List files with details
+cd dir_name → Change directory
+mkdir dir_name → Create directory
+rmdir dir_name → Remove empty directory
+rm -rf dir_name → Remove directory and contents
+cp file1 file2 → Copy files
+mv file1 file2 → Move or rename files
+
+# File Viewing and Editing
+cat file → View file content
+less file → View file content (scrollable)
+head -n 10 file → First 10 lines
+tail -n 10 file → Last 10 lines
+tail -f logfile → Monitor logs in real time
+Editors: nano file, vi file, vim file
+
+# File Permissions
+ls -l → Show permissions
+chmod 755 file → Change permissions
+chown user:group file → Change ownership
+
+# Process Management
+ps -ef → Show running processes
+top / htop → Real-time process monitoring
+kill -9 PID → Kill a process
+jobs, fg, bg → Manage background/foreground jobs
+
+# Networking
+ping host → Test connectivity
+curl url → Fetch data from a URL
+wget url → Download files
+netstat -tulnp → Show open ports & services
+lsof -i :8080 → Check which process is using port 8080
+ssh user@host → Remote login
+
+# System Monitoring
+df -h → Disk usage
+du -sh dir → Directory size
+free -m → Memory usage
+uptime → System uptime & load
+whoami → Current logged-in user
+uname -a → System info
+
+# Search and Filters
+grep "text" file → Search text in file
+find /path -name "*.log" → Find files
+awk '{print $1}' file → Process text data
+sed 's/old/new/g' file → Replace text in file
+
+# Archiving and Compression
+tar -cvf archive.tar file/dir → Create tar archive
+tar -xvf archive.tar → Extract tar archive
+gzip file → Compress file
+gunzip file.gz → Decompress
+
+# Package Management (Ubuntu/Debian)
+apt update → Update package list
+apt upgrade → Upgrade packages
+apt install pkg → Install a package
+apt remove pkg → Remove a package
+
+# User Management
+who → Show logged-in users
+id → Show user ID & groups
+adduser username → Add user
+passwd username → Change password
