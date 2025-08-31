@@ -64,4 +64,6 @@ Comments: Use # to add comments in scripts.
 Debugging: Run with -x to debug:
 bash -x script.sh
 
+bash --version check shellversion
+
 
