@@ -127,5 +127,18 @@ Normal output discarded (/dev/null).
 Errors appended to backup.log.
 Timestamps are also appended to the log file.
 
+tar -czf backup.tar.gz /home/user/data
+This command creates a compressed archive (backup) of the /home/user/data directory.
 
+Components Explained:
+tar → Stands for tape archive (used for archiving files).
+Options used:
+-c → Create a new archive.
+-z → Compress using gzip.
+-f backup.tar.gz → Use file name backup.tar.gz for the archive.
+(f always expects a file name immediately after it).
+backup.tar.gz → Name of the archive file you are creating.
+.tar → Archive created by tar.
+.gz → Indicates it is compressed with gzip.
+/home/user/data → The directory (or file) to be archived.
 
