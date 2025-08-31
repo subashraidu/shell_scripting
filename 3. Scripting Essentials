@@ -1,0 +1,131 @@
+# Variables
+Used to store values and reuse them.
+name="Subash"
+echo "Hello $name"
+No spaces around = in variable assignment.
+
+# Reading Input
+Read user input during script execution.
+echo "Enter your name:"
+read username
+echo "Welcome $username"
+
+#Conditional Statements (if/else)
+Used for decision-making.
+num=10
+if [ $num -gt 5 ]; then
+  echo "Number is greater than 5"
+else
+  echo "Number is less than or equal to 5"
+fi
+
+# Loops
+For Loop
+Iterate over a list of items.
+for i in 1 2 3 4 5
+do
+  echo "Number: $i"
+done
+
+While Loop
+Repeat until condition is false.
+count=1
+while [ $count -le 5 ]
+do
+  echo "Count: $count"
+  count=$((count+1))
+done
+
+Until Loop
+Opposite of while (runs until condition becomes true).
+count=1
+until [ $count -gt 5 ]
+do
+  echo "Count: $count"
+  count=$((count+1))
+done
+
+#Functions
+Group reusable code.
+greet() {
+  echo "Hello $1"
+}
+greet "DevOps Engineer"
+
+#Command-line Arguments
+Scripts can accept arguments.
+echo "Script name: $0"
+echo "First argument: $1"
+echo "Second argument: $2"
+
+#Exit Status
+Every command returns an exit status (0 = success, non-zero = failure).
+ls /not_exist
+echo "Exit status: $?"   # prints 2 (error)
+
+#Case Statement
+Useful for multiple choices.
+echo "Enter choice:"
+read choice
+case $choice in
+  1) echo "You chose One";;
+  2) echo "You chose Two";;
+  *) echo "Invalid choice";;
+esac
+
+# In shell scripting, you can assign the output of a Linux command to a variable using either:
+Command Substitution ($(command) – modern, recommended)
+current_date=$(date)
+echo "Today is: $current_date"
+
+example
+# Store current user
+user=$(whoami)
+echo "Current user is: $user"
+
+# Store current working directory
+workdir=$(pwd)
+echo "You are in: $workdir"
+
+# Store number of running processes
+process_count=$(ps -e | wc -l)
+echo "Total running processes: $process_count"
+
+Normally, commands take input from the keyboard (stdin).
+With input redirection, we can make a command read input from a file instead.
+cat < names.txt
+cat will take its input from the file instead of the keyboard, so it prints:
+
+wc -l < names.txt
+Counts the number of lines in names.txt.
+Equivalent to wc -l names.txt, but here the file is fed as stdin.
+< file → Takes input from a file instead of keyboard.
+Very useful in loops, automation, and feeding commands from files.
+
+#Overwriting with >
+Redirects output to a file, replacing its contents.
+echo "Hello DevOps" > output.txt
+If output.txt exists, it will be overwritten.
+If it doesn’t exist, it will be created.
+
+Appending with >>
+Redirects output to a file, but adds (appends) content instead of overwriting.
+echo "New Line" >> output.txt
+
+> → Overwrite output file
+>> → Append output file
+2> → Redirect errors
+&> → Redirect both output + errors
+
+#!/bin/bash
+# Script: backup.sh
+echo "Starting backup at $(date)" >> backup.log
+tar -czf backup.tar.gz /home/user/data > /dev/null 2>> backup.log
+echo "Backup completed at $(date)" >> backup.log
+
+Normal output discarded (/dev/null).
+Errors appended to backup.log.
+Timestamps are also appended to the log file.
+
+
+
