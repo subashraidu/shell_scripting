@@ -1,0 +1,67 @@
+# What is a Script?
+
+A script is a command-line program that contains a series of commands.
+These commands are executed by an interpreter.
+Anything you can type at the terminal can be written inside a script.
+
+Purpose: Mainly used for automation of repetitive tasks.
+In the case of a shell script, the shell acts as the interpreter and executes commands one after another.
+
+Making a Script Executable
+Before running a shell script, it must have the execute permission.
+This is done using chmod:
+chmod 755 script.sh
+7 → read, write, execute (owner)
+5 → read, execute (group & others)
+
+Running a Script
+There are two common ways to run a shell script:
+Using the shell command:
+sh script.sh
+Direct execution (needs executable permission):
+./script.sh
+
+Shebang (#!)
+A script usually starts with a shebang (#!) followed by the path to the interpreter.
+Example:
+#!/bin/bash
+echo "Hello, World!"
+
+What follows the shebang determines which interpreter is used:
+#!/bin/bash → Bourne Again Shell
+#!/bin/sh → Default system shell
+#!/usr/bin/python3 → Python interpreter
+
+What Happens When You Run a Script with Shebang?
+When you execute a script that contains a shebang line:
+The interpreter (e.g., bash) is started.
+The path to the script is passed as an argument to that interpreter.
+You can verify this by examining the process table (ps -f or ps aux).
+It will show the interpreter (like /bin/bash script.sh) running.
+
+Difference between #!/bin/bash and #!/bin/sh
+  The Shebang (#!)
+The first line in a script (called the shebang) tells the system which interpreter to use to run the script.
+
+Example:
+#!/bin/bash → run the script with the Bash shell
+#!/bin/sh → run the script with the sh shell (or its system-defined equivalent)
+
+different shells:
+Bourne Shell (sh) sh → Original, simple, portable
+Bash (Bourne Again Shell) bash → Default, powerful, widely used
+C Shell (csh) csh → C-like syntax, history features
+Korn Shell (ksh) ksh → Enterprise scripting, advanced features
+Z Shell (zsh) zsh → Modern, customizable, popular with devs
+Fish (Friendly Interactive Shell) fish → User-friendly, great interactivity
+
+Script file extension: Conventionally .sh, but not mandatory.
+Variables: Can store and reuse values. Example:
+name="Subash"
+echo "Hello $name"
+
+Comments: Use # to add comments in scripts.
+Debugging: Run with -x to debug:
+bash -x script.sh
+
+
